@@ -89,5 +89,16 @@ export type PublicWeek = {
   now: string;
   remainingMs: number;
   fixtureCount: number;
-  fixtures: Array<Fixture & { away: PublicTeam; home: PublicTeam }>;
+  fixtures: Array<{
+    id: string;
+    week: number;
+    season: number;
+    kickoff: string;
+    kickoffLabel: string;
+    network: string;
+    venue: string;
+    note?: string;
+    away: PublicTeam;
+    home: PublicTeam;
+  }>;
 };

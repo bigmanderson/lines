@@ -79,13 +79,10 @@ function publicWeek(week: any, now = Date.now()): PublicWeek {
       kickoffLabel: fixture.kickoffLabel,
       network: fixture.network,
       venue: fixture.venue,
-      away: fixture.away,
-      home: fixture.home,
       note: fixture.note,
-      awayTeam: publicTeam(fixture.away),
-      home: fixture.home,
-      away: fixture.away,
-    })) as PublicWeek["fixtures"],
+      away: publicTeam(fixture.away),
+      home: publicTeam(fixture.home),
+    })),
   };
 }
 
@@ -459,7 +456,8 @@ linesGroup.addAction("dropLines", {
     { key: "playerId", type: "DataField", required: true },
   ],
   async action({ orm, inCloud, params }) {
-    if (inCloud.config?.core?.cloud_mode === "production") {
+    const mode = inCloud.getExtensionConfigValue?.("core", "cloudMode");
+    if (mode === "production") {
       raiseServerException(403, "Lines drop on the clock");
     }
     const matchRow = await loadMatch(orm, String(params.code));

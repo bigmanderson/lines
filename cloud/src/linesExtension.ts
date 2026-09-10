@@ -7,6 +7,7 @@ import { nflWeek } from "./entries/nflWeek.ts";
 import { ensureLocalAdmin } from "./seed/ensureLocalAdmin.ts";
 import { ensureSyncSchedule } from "./seed/ensureSyncSchedule.ts";
 import { ensureWeek } from "./seed/ensureWeek.ts";
+import { vueCors } from "./serve/vueCors.ts";
 
 export const linesExtension = defineExtension("lines", {
   label: "LINES",
@@ -14,6 +15,7 @@ export const linesExtension = defineExtension("lines", {
   icon: "game",
   entryTypes: [linesPlayer, nflWeek, linesMatch, linesRivalry],
   apiGroups: [linesGroup],
+  middleware: [vueCors],
   afterGlobalMigrate: [{
     name: "ensureLocalAdmin",
     action: ensureLocalAdmin,

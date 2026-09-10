@@ -48,16 +48,24 @@ Optional: copy `cloud/.env.example` to `cloud/.env` and set `THE_ODDS_API_KEY` f
 
 ## Separate Vue deploy
 
-Two InSpatial apps from this repo:
+Two InSpatial apps from this repo. Do **not** run `inspatial deploy` from `vue/` inside this tree — the CLI walks up, finds Kit + Cloud, and overwrites `lines.inspatial.app`. Stage the Vue dist in an isolated folder:
 
 ```bash
-# Kit + Cloud
+# Kit + Cloud (from products/lines)
+INSPATIAL_CLOUD_VERSION=0.9.12 \
+INSPATIAL_CLOUD_EMAIL=admin@user.com \
+INSPATIAL_CLOUD_PASSWORD=password \
+INSPATIAL_KIT_SYNC=0 \
 inspatial deploy --prod
 
-# Vue gold (from vue/)
+# Vue gold
 cd vue
 VITE_CLOUD_URL=https://lines.inspatial.app npm run build
-inspatial deploy --prod --skip-build --dist ./dist
+mkdir -p /tmp/lines-web-deploy
+cp inspatial.json /tmp/lines-web-deploy/
+cp -R dist /tmp/lines-web-deploy/dist
+cd /tmp/lines-web-deploy
+inspatial deploy --prod --skip-build --dist ./dist --domain lines-web
 ```
 
 - https://lines.inspatial.app — Kit + API

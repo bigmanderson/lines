@@ -1,0 +1,8 @@
+{
+  "name": "lines",
+  "description": "Guess the Vegas lines. Closest to the number takes the game. Head to head over an NFL season.",
+  "deploy": {
+    "domain": "lines",
+    "server": "./cloud"
+  }
+}

@@ -1,0 +1,374 @@
+{
+  "$schema": "./.inspatial/schema/deno.json",
+  "inspatial": {
+    "kit": {
+      "server": {
+        "port": 6376,
+        "strictPort": false,
+        "portMetadata": "all",
+        "base": "/",
+        "host": "127.0.0.1",
+        "proxy": {
+          "/api": "http://localhost:8104",
+          "/ws": "http://localhost:8104"
+        },
+        "cacheControl": "no-store",
+        "liveReload": true,
+        "responseCacheEnabled": true,
+        "responseCacheTtlMs": 2000,
+        "responseCacheMaxEntries": 256,
+        "assetRouteBase": "/asset/"
+      },
+      "paths": {
+        "srcDir": "./src",
+        "distDir": "./dist",
+        "typesDir": "./.inspatial/types",
+        "styleDir": "./.inspatial/style",
+        "schemaDir": "./.inspatial/schema",
+        "htmlEntry": "./index.html",
+        "htmlDist": "./dist/index.html",
+        "assetSrcDir": "./src/asset",
+        "assetDistDir": "./dist/asset",
+        "favicon": "./src/asset/favicon.png",
+        "renderEntry": "./src/global/render.ts",
+        "windowEntry": "./src/app/window.tsx",
+        "sceneEntry": "./src/app/scene.tsx",
+        "componentEntry": "./src/app/component.tsx",
+        "themeEntry": "./src/global/theme.ts",
+        "cloudEntry": "./src/global/cloud.ts",
+        "denoConfig": "./deno.json",
+        "projectRoot": ".",
+        "cssInput": "./src/global/theme.css",
+        "cssOutput": "./dist/kit.css",
+        "jsOutput": "./dist/bundle.js",
+        "routeManifest": "./.inspatial/route/route-manifest.generated.ts",
+        "routeViews": "./.inspatial/route/route-views.generated.ts",
+        "routeTypes": "./.inspatial/route/route-types.generated.d.ts",
+        "assetManifest": "./.inspatial/asset/asset-manifest.generated.d.ts",
+        "cloudTypes": "./.inspatial/cloud/cloud.generated.d.ts"
+      },
+      "watch": {
+        "include": [
+          "./src"
+        ],
+        "includeFramework": [
+          "@inspatial/kit",
+          "../kit/src",
+          "../kit/modules"
+        ],
+        "exclude": [
+          "node_modules",
+          "dist",
+          ".git",
+          ".inspatial",
+          ".vscode",
+          "coverage"
+        ]
+      },
+      "state": {
+        "pattern": "explicit"
+      },
+      "cloud": {
+        "pattern": "scalar"
+      },
+      "test": {
+        "pattern": "bdd"
+      },
+      "runtime": {
+        "markup": "inspatial-script",
+        "strictMarkup": "off",
+        "convention": {
+          "naming": {
+            "map": {
+              "component": {
+                "suffix": ""
+              },
+              "window": {
+                "suffix": "Window"
+              },
+              "scene": {
+                "suffix": "Scene"
+              },
+              "presentation": {
+                "suffix": "Presentation"
+              },
+              "view": {
+                "suffix": "View"
+              },
+              "type": {
+                "suffix": "Props"
+              },
+              "style": {
+                "suffix": "Style"
+              },
+              "shader": {
+                "suffix": "Shader"
+              },
+              "trigger": {
+                "suffix": "Trigger"
+              },
+              "controller": {
+                "suffix": "Controller"
+              },
+              "extension": {
+                "suffix": "Extension"
+              },
+              "theme": {
+                "suffix": "Theme"
+              },
+              "root": {
+                "suffix": "Root"
+              },
+              "error": {
+                "suffix": "Error"
+              },
+              "render": {
+                "suffix": "Render"
+              },
+              "route": {
+                "suffix": "Route"
+              },
+              "log": {
+                "suffix": "Log"
+              },
+              "action": {
+                "suffix": "Action"
+              },
+              "form": {
+                "suffix": "Form"
+              },
+              "client": {
+                "suffix": "Client"
+              },
+              "page": {
+                "suffix": "Page"
+              },
+              "layout": {
+                "suffix": "Layout"
+              },
+              "loading": {
+                "suffix": "Loading"
+              },
+              "schema": {
+                "suffix": "Schema"
+              },
+              "manager": {
+                "suffix": "Manager"
+              },
+              "behaviour": {
+                "suffix": "Behaviour"
+              },
+              "strategy": {
+                "suffix": "Strategy"
+              },
+              "spec": {
+                "suffix": "Spec"
+              },
+              "config": {
+                "suffix": "Config"
+              },
+              "cloud": {
+                "prefix": "use",
+                "suffix": "Cloud"
+              },
+              "state": {
+                "prefix": "use",
+                "suffix": "State"
+              },
+              "store": {
+                "prefix": "use",
+                "suffix": "Store"
+              },
+              "handler": {
+                "prefix": "handle"
+              }
+            },
+            "nonConventionNaming": "filename",
+            "acronyms": [
+              "api",
+              "ui",
+              "ux",
+              "xr",
+              "ar",
+              "vr",
+              "os",
+              "id",
+              "url",
+              "css",
+              "html",
+              "json",
+              "ai",
+              "2d",
+              "3d"
+            ]
+          },
+          "desugar": {
+            "allBases": true,
+            "bases": [
+              "component",
+              "window",
+              "scene",
+              "presentation"
+            ],
+            "defaultExportBases": [
+              "window",
+              "scene"
+            ]
+          },
+          "casing": {
+            "folderCase": "kebab",
+            "routeCase": "kebab"
+          }
+        }
+      },
+      "intelligence": {
+        "codegen": true,
+        "importStyle": "app",
+        "autoImports": {
+          "enabled": true,
+          "write": false,
+          "formats": [
+            "ts",
+            "tsx",
+            "js",
+            "jsx",
+            "in"
+          ],
+          "excludeIndex": true
+        }
+      },
+      "build": {
+        "js": {
+          "entrypoints": [],
+          "outputDir": "./dist",
+          "platform": "browser",
+          "minify": true,
+          "codeSplitting": true,
+          "splitStrategy": "route-based",
+          "format": "esm",
+          "inlineImports": false,
+          "external": [],
+          "packages": "bundle",
+          "sourcemap": false
+        },
+        "style": {
+          "engine": "iss",
+          "input": "./src/global/theme.css",
+          "output": "./dist/kit.css",
+          "contentGlobs": [
+            "src/**/*.{ts,tsx,js,jsx,in}"
+          ],
+          "pattern": "explicit"
+        },
+        "html": {
+          "enabled": true,
+          "preconnectOrigins": [],
+          "preloadRouteChunks": false
+        },
+        "timing": {
+          "debounceMs": 100,
+          "waitIntervalMs": 100
+        }
+      },
+      "discovery": {
+        "renderSearch": [
+          "./render.ts",
+          "./src/render.ts",
+          "./src/global/render.ts",
+          "./global/render.ts",
+          "./app/render.ts"
+        ],
+        "kitRoots": [
+          "@inspatial/kit",
+          "../kit/src",
+          "../kit/modules"
+        ]
+      },
+      "module": {
+        "scopes": [
+          "@in",
+          "@inspatial",
+          "@spatial",
+          "@xr"
+        ],
+        "packageManagers": [
+          "jsr"
+        ],
+        "security": "strict"
+      }
+    }
+  },
+  "tasks": {
+    "dev": "INSPATIAL_KIT_SYNC=0 inspatial kit dev",
+    "tunnel": "inspatial kit tunnel",
+    "build": "inspatial kit build",
+    "serve": "inspatial kit dev",
+    "deploy": "inspatial deploy",
+    "kit:lighthouse": "inspatial kit lighthouse",
+    "routes": "inspatial kit routes",
+    "test": "inspatial test",
+    "benchmark": "inspatial bench",
+    "clean": "inspatial kit clean"
+  },
+  "compilerOptions": {
+    "lib": [
+      "ES2022",
+      "DOM",
+      "DOM.Iterable",
+      "deno.ns",
+      "esnext"
+    ],
+    "jsx": "react-jsx",
+    "jsxImportSource": "@inspatial/kit"
+  },
+  "lint": {
+    "rules": {
+      "tags": [
+        "recommended",
+        "jsx",
+        "jsr"
+      ],
+      "include": [
+        "no-var",
+        "no-window",
+        "no-unused-vars",
+        "ban-untagged-todo",
+        "no-empty-interface",
+        "no-slow-types",
+        "no-deprecated-deno-api",
+        "no-duplicate-case",
+        "no-dupe-class-members",
+        "camelcase",
+        "no-dupe-args",
+        "no-sloppy-imports",
+        "no-class-assign",
+        "no-unsafe-finally",
+        "verbatim-module-syntax"
+      ],
+      "exclude": [
+        "no-explicit-any",
+        "ban-ts-comment",
+        "jsx-no-children-prop",
+        "jsx-boolean-value",
+        "ban-types",
+        "jsx-curly-braces"
+      ]
+    },
+    "exclude": [
+      "**/test/**/*",
+      "**/*.test.ts",
+      "**/*.test.tsx",
+      "**/*.test.jsx",
+      "**/*.test.js",
+      "**/*.spec.ts",
+      "**/*.spec.tsx",
+      "**/*.spec.jsx",
+      "**/*.spec.js",
+      "**/*_test.ts",
+      "**/*_test.tsx",
+      "**/*_test.jsx",
+      "**/*_test.js"
+    ]
+  },
+  "nodeModulesDir": "auto"
+}

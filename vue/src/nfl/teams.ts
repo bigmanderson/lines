@@ -1,0 +1,38 @@
+export const NFL_TEAMS = [
+  { id: "ARI", espn: "ari", color: "#97233F" },
+  { id: "ATL", espn: "atl", color: "#A71930" },
+  { id: "BAL", espn: "bal", color: "#241773" },
+  { id: "BUF", espn: "buf", color: "#00338D" },
+  { id: "CAR", espn: "car", color: "#0085CA" },
+  { id: "CHI", espn: "chi", color: "#0B162A" },
+  { id: "CIN", espn: "cin", color: "#FB4F14" },
+  { id: "CLE", espn: "cle", color: "#311D00" },
+  { id: "DAL", espn: "dal", color: "#041E42" },
+  { id: "DEN", espn: "den", color: "#FB4F14" },
+  { id: "DET", espn: "det", color: "#0076B6" },
+  { id: "GB", espn: "gb", color: "#203731" },
+  { id: "HOU", espn: "hou", color: "#03202F" },
+  { id: "IND", espn: "ind", color: "#002C5F" },
+  { id: "JAX", espn: "jax", color: "#006778" },
+  { id: "KC", espn: "kc", color: "#E31837" },
+  { id: "LAC", espn: "lac", color: "#0080C6" },
+  { id: "LAR", espn: "lar", color: "#003594" },
+  { id: "LV", espn: "lv", color: "#000000" },
+  { id: "MIA", espn: "mia", color: "#008E97" },
+  { id: "MIN", espn: "min", color: "#4F2683" },
+  { id: "NE", espn: "ne", color: "#002244" },
+  { id: "NO", espn: "no", color: "#D3BC8D" },
+  { id: "NYG", espn: "nyg", color: "#0B2265" },
+  { id: "NYJ", espn: "nyj", color: "#125740" },
+  { id: "PHI", espn: "phi", color: "#004C54" },
+  { id: "PIT", espn: "pit", color: "#FFB612" },
+  { id: "SEA", espn: "sea", color: "#002244" },
+  { id: "SF", espn: "sf", color: "#AA0000" },
+  { id: "TB", espn: "tb", color: "#D50A0A" },
+  { id: "TEN", espn: "ten", color: "#0C2340" },
+  { id: "WAS", espn: "wsh", color: "#5A1414" },
+] as const;
+
+export function teamLogo(espn: string) {
+  return `https://a.espncdn.com/i/teamlogos/nfl/500/${espn}.png`;
+}

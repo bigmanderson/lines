@@ -1,0 +1,24 @@
+{
+  "$schema": ".inspatial/cloud-config-schema.json",
+  "core": {
+    "name": "lines",
+    "cloud_mode": "development",
+    "log_level": "info",
+    "broker_port": 15124,
+    "queue_port": 15224,
+    "host_name": "localhost",
+    "serve_port": 8104,
+    "auto_config": true,
+    "allowed_origins": ["*"],
+    "public_root": "./public",
+    "single_page_app": false,
+    "cache_static": false,
+    "auto_types": true,
+    "auto_migrate": true,
+    "drop_tables": false,
+    "embedded_db": true,
+    "embedded_db_port": 14124,
+    "default_currency": "USD",
+    "auth_allow_all": false
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "../../../../.inspatial/schema/component.json",
+  "meta": {
+    "name": "LineCard",
+    "category": "Block",
+    "platform": ["web", "ios", "visionos", "android"],
+    "author": { "name": "InSpatial" },
+    "version": "0.1.0",
+    "license": "Intentional-License-1.0"
+  }
+}

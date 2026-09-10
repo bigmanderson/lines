@@ -1,0 +1,5 @@
+{
+  "deno.enable": true,
+  "deno.lint": true,
+  "deno.config": "./.inspatial/kit/deno.generated.json"
+}

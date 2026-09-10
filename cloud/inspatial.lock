@@ -1,0 +1,8 @@
+{
+  "lockVersion": 1,
+  "packages": {
+    "@inspatial/cloud": {
+      "version": "1.0.0"
+    }
+  }
+}

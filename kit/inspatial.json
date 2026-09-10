@@ -1,0 +1,46 @@
+{
+  "name": "lines",
+  "version": "0.1.0",
+  "description": "Guess the Vegas lines. Closest to the number takes the game.",
+  "deploy": {
+    "domain": "lines",
+    "server": "../cloud"
+  },
+  "kit": {
+    "server": {
+      "port": 6376,
+      "host": "127.0.0.1",
+      "strictPort": false,
+      "proxy": {
+        "/api": "http://localhost:8104",
+        "/ws": "http://localhost:8104"
+      }
+    },
+    "runtime": {
+      "markup": "inspatial-script"
+    },
+    "scaffold": {
+      "profile": "bare"
+    },
+    "intelligence": {
+      "autoImports": {
+        "write": false
+      }
+    },
+    "build": {
+      "style": {
+        "engine": "iss"
+      }
+    },
+    "cloud": {
+      "endpoint": "http://localhost:8104"
+    }
+  },
+  "app": {
+    "seo": {
+      "title": "LINES",
+      "titleTemplate": "%s — Guess the Vegas lines",
+      "description": "Guess every Vegas number before the book drops. Closest wins."
+    }
+  }
+}

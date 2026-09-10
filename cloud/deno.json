@@ -1,0 +1,16 @@
+{
+  "name": "lines",
+  "compilerOptions": {
+    "verbatimModuleSyntax": true,
+    "types": ["./.inspatial/models.d.ts"]
+  },
+  "tasks": {
+    "dev": "inspatial cloud dev"
+  },
+  "lint": {
+    "rules": {
+      "include": ["verbatim-module-syntax"],
+      "exclude": ["no-explicit-any"]
+    }
+  }
+}

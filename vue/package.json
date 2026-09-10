@@ -1,0 +1,23 @@
+{
+  "name": "lines-web",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build && cp dist/index.html dist/404.html",
+    "preview": "vite preview --port 4176",
+    "check": "vue-tsc --noEmit"
+  },
+  "dependencies": {
+    "vue": "^3.5.26",
+    "vue-router": "^4.6.4"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "@vitejs/plugin-vue": "^6.0.3",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.1",
+    "vue-tsc": "^3.2.2"
+  }
+}

@@ -1,0 +1,8 @@
+.inspatial/
+dist/
+.env
+.env.*
+.cloud-session
+node_modules/
+.DS_Store
+*.log

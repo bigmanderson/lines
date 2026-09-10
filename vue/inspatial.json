@@ -1,0 +1,7 @@
+{
+  "name": "lines-web",
+  "description": "LINES Vue play surface. Same Cloud as the Kit app.",
+  "deploy": {
+    "domain": "lines-web"
+  }
+}
